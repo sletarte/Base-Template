@@ -1,0 +1,17 @@
+// Sections
+div.home-sections section{
+  height: 100%;
+
+  &#home{
+    background-color: $section-background + 30%;
+  }
+  &#services{
+    background-color: $section-background + 60%;
+  }
+  &#contact{
+    background-color: $section-background + 90%;
+  }
+  &#about{
+    background-color: $section-background + 120%;
+  }
+}

@@ -1,0 +1,96 @@
+//*************************
+//MEDIA QUERIES
+//*************************
+@mixin desktop {
+  @media screen
+    and (min-width: 1200px) {
+      @content;
+    }
+}
+@mixin ipad {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+      @content;
+  }
+}
+
+@mixin iphone5 {
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+  }
+}
+
+@mixin iphone6 {
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+  }
+}
+
+@mixin iphone6plus{
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+      @content;
+  }
+}
+//*************************
+//KEYFRAMES ,ANIMATIONS AND TRANSITIONS
+//usage
+//@include keyframes(slide-down)
+//@include animation('slide-down 5s 3');
+//@include transition(color .3s ease);
+//*************************
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+//*************************
+//GENERAL STYLE
+//*************************
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
